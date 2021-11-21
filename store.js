@@ -19,17 +19,28 @@ function ready() {
 
 
 function updateCartTotal() {
-    let cartItemContainer = document.getElementsByClassName('cart-items')[0]
-    let cartRows = cartItemContainer.getElementsByClassName('cart-row')
-    let total = 0
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
     for (let i = 0; i < cartRows.length; i++) {
-        let cartRow = cartRows[i]
-        let priceElement = cartRow.getElementsByClassName('cart-price')[0];  
-        let quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        let price = parseFloat(priceElement.innerText.replace('₹', ''))
-        let quantity = quantityElement.value 
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0];  
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('₹', ''))
+        var quantity = quantityElement.value 
         total = total + (price*quantity)
     }
     document.getElementsByClassName('cart-total-price')[0].innerText = "₹" + total;
-    // updateCartTotal();
 }
+
+// cartItemContainer = document.getElementsByClassName('cart-items')[0]
+// cartRows = cartItemContainer.getElementsByClassName('cart-row')
+
+// cartRow = cartRows[0]
+// priceElement = cartRow.getElementsByClassName('cart-price')[0];  
+// quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+// quantity = quantityElement.value
+// price = parseFloat(priceElement.innerText.replace('₹', ''))
+// productPrice = productPrice*[quantity]
+
+// document.getElementsByClassName('cart-price')[0].innerText = "₹" + productPrice;
